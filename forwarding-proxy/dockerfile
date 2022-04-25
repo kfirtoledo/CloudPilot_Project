@@ -1,0 +1,16 @@
+################################################################
+#Name: dockerfile 
+#Desc: dockerfile for creating a container for basic forwarding
+#      using iptables rules 
+################################################################
+FROM ubuntu:latest
+USER root
+#COPY iptables.sh /usr/local/bin/iptables.sh
+#RUN chmod +x /usr/local/bin/iptables.sh  
+RUN apt-get update
+RUN yes|apt-get install iptables
+RUN yes|apt-get install net-tools
+#CMD iptables.sh
+#RUN iptables.sh
+CMD tail -f /dev/null
+EXPOSE 5200:5200/tcp

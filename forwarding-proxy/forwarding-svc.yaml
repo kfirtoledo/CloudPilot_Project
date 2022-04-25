@@ -1,0 +1,42 @@
+################################################################
+#Name: forwarding-svc 
+#Desc: service file for creating a load-balancer with external 
+#      port 5200  
+################################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: forwarding-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: forwarding-proxy
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - port: 5200
+      name: tcp-in
+      targetPort: 5200
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30100
+
+
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: NetworkPolicy
+# metadata:
+#   name: forwarding-egress
+# spec:
+#   podSelector:
+#     matchLabels:
+#       #networking/allow-internet-egress: "true"
+#       app: forwarding-proxy
+#   egress:
+#   - to:
+#     - podSelector:
+#         matchLabels:
+#           app: forwarding-proxy
+#   policyTypes:
+#   - Egress
+#   - Ingress

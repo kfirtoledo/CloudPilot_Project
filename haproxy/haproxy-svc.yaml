@@ -1,0 +1,53 @@
+################################################################
+#Name: Haproxy-svc 
+#Desc: service file for creating a load-balancer with external 
+#      port 5100  
+################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: haproxy-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-haproxy
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - port: 5100
+      name: tcp-in
+      targetPort: 5021
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30010
+
+
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: NetworkPolicy
+# metadata:
+#   name: internet-egress
+# spec:
+#   podSelector:
+#     matchLabels:
+#       #networking/allow-internet-egress: "true"
+#       app: my-haproxy
+#   egress:
+#   - to:
+#     - podSelector:
+#         matchLabels:
+#           app: my-haproxy
+#     ports:
+#       - protocol: TCP
+#         port: 5500        
+#   ingress:
+#   - from:
+#     - podSelector:
+#         matchLabels:
+#           app: my-haproxy
+#     ports:
+#       - protocol: TCP
+#         port: 5100
+#         port: 5021
+#   policyTypes:
+#   - Egress
+#   - Ingress

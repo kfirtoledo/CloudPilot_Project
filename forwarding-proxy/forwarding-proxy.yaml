@@ -1,0 +1,37 @@
+################################################################
+#Name: forwarding-proxy 
+#Desc: YAML file for creating a k8s cluster with node of 
+#      forwarding-proxy. a load-balancer connect to this node  
+#      (port 5200) 
+################################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forwarding-deployment
+  labels:
+    app: forwarding-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forwarding-proxy
+  template:
+    metadata:
+      labels:
+        app: forwarding-proxy
+    spec:
+      containers:
+      - name: forwarding-proxy
+        image: gcr.io/kubernetes-321918/forwarding-proxy 
+        #image: gcr.io/kubernetes-321918/forwarding-proxy 
+        #imagePullPolicy: Never
+        securityContext:
+          privileged: true
+          capabilities:
+            add: ["NET_ADMIN","NET_RAW"]
+        ports:
+        - containerPort: 5200
+        - containerPort: 5500
+        name: bind-tcp
+

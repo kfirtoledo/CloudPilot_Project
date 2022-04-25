@@ -1,0 +1,31 @@
+################################################################
+#Name: Haproxy 
+#Desc: YAML file for creating a k8s cluster with node of 
+#      Haproxy. a load-balancer connect to this node (port 5100) 
+################################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: haproxy-deployment
+  labels:
+    app: my-haproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-haproxy
+  template:
+    metadata:
+      labels:
+        app: my-haproxy
+    spec:
+      containers:
+      - name: my-haproxy
+        #image: gcr.io/kubernetes-321918/my-haproxy:custom 
+        image: gcr.io/kubernetes-321918/my-haproxy:custom 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5021
+        - containerPort: 5500
+        name: bind-tcp
+

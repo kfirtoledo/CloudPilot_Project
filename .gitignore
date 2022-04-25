@@ -1,0 +1,9 @@
+.idea
+*.iml
+*.pyc
+old/*
+check.sh
+Graphs/output
+
+haproxy/haproxy.cfg
+project_metadata/metadata.json
