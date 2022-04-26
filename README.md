@@ -138,6 +138,6 @@ This platform is using the following tools:
 - iPerf3 tool   (version: iPerf3 3.9)
 - HAProxy Load Balancer (version:latest)
 - Ubuntu docker image (version:latest).
-- Kubern (version:latest).
+- Kubernetes (version:latest).
 
 Special thanks to the maintainers and developers of those tools.
