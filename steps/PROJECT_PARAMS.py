@@ -6,7 +6,7 @@
 ################################################################
 import os, sys
 ############################### Google cloud Parameters ##########################
-GOOGLE_PROJECT_ID    = "kubernetes-321918"  #PROJECT_ID=sp.getoutput("gcloud info --format='value(config.project)'")
+GOOGLE_PROJECT_ID    = "cedar-turbine-341711"  #PROJECT_ID=sp.getoutput("gcloud info --format='value(config.project)'")
 GOOGLE_CONT_REGESTRY = "gcr.io/" + GOOGLE_PROJECT_ID
 
 ############################### IBM cloud Parameters ##########################

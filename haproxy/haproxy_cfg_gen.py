@@ -21,12 +21,20 @@ file = r'{}/haproxy.cfg'.format(d) # path to be created
 print(f"Start creating haproxy cfg target ip: {args.target_ip} target port: {args.target_port}")
 
 f = open(file, "w")
+f.write("global\n")
+#f.write("	tune.bufsize    409857600\n")
+# f.write("	tune.rcvbuf.client     52428800\n")
+# f.write("	tune.rcvbuf.server    52428800\n")
+# f.write("	tune.sndbuf.client    52428800\n")
+# f.write("	tune.sndbuf.server    52428800\n")
+
 f.write("defaults\n")
 f.write("	log	global\n")
 f.write("	mode	tcp\n")
-f.write("        timeout connect 5000\n")
-f.write("        timeout client  50000\n")
-f.write("        timeout server  50000\n")
+f.write("        timeout connect 50000\n")
+f.write("        timeout client  500000\n")
+f.write("        timeout server  500000\n")
+
 f.write("\n")
 f.write("frontend iperf_5021\n")
 f.write("   bind *:5021\n")

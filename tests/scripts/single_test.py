@@ -31,6 +31,7 @@ parser.add_argument("-h_zone"    , "--host_zone"      , default = "us-central1",
 parser.add_argument("-h_platform", "--host_platform"  , default = "gcp"        , help="describe host k8s cloud platform")
 parser.add_argument("-t_zone"    , "--target_zone"    , default = "us-west1"   , help="describe target zone")
 parser.add_argument("-t_platform", "--target_platform", default = "gcp"        , help="describe target k8s cloud platform")
+parser.add_argument("-folder_res" , "--folder_res"    , default = ""          , help="prefix for folder result")
 
 #python3 tests/scripts/single_test.py  -h_zone us-east1 -p_zone us-central1 -t_zone us-west1
 start_time=test_start_time()
@@ -44,20 +45,25 @@ target_zone     = args.target_zone
 target_platform = args.target_platform
 
 #creating source, target, proxy clusters
-os.system("python3 ./steps/create_k8s_cluster.py -type host   -zone {} -platform {} -bg {}".format(host_zone,host_platform,True))
-os.system("python3 ./steps/create_k8s_cluster.py -type proxy  -zone {} -platform {} -bg {}".format(proxy_zone,proxy_platform,True))
-os.system("python3 ./steps/create_k8s_cluster.py -type target -zone {} -platform {} ".format(target_zone,target_platform))
+os.system(f"python3 ./steps/create_k8s_cluster.py -type host   -zone {host_zone} -platform {host_platform} -bg {True}")
+os.system(f"python3 ./steps/create_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform} -bg {True}")
+os.system(f"python3 ./steps/create_k8s_cluster.py -type target -zone {target_zone} -platform {target_platform} ")
 
+# #check ready source, target, proxy clusters
+os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type host   -zone {host_zone}   -platform {host_platform}  ")
+os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type target -zone {target_zone} -platform {target_platform}")
+os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type proxy  -zone {proxy_zone}  -platform {proxy_platform} ")
 
 #setting source, target, proxy clusters
-os.system("python3 ./steps/set_k8s_cluster.py -type target -zone {} -platform {}".format(target_zone,target_platform))
-os.system("python3 ./steps/set_k8s_cluster.py -type host   -zone {} -platform {}".format(host_zone,host_platform))
-os.system("python3 ./steps/set_k8s_cluster.py -type proxy  -zone {} -platform {}".format(proxy_zone,proxy_platform))
+os.system(f"python3 ./steps/set_k8s_cluster.py -type target -zone {target_zone} -platform {target_platform}")
+os.system(f"python3 ./steps/set_k8s_cluster.py -type host   -zone {host_zone} -platform {host_platform}")
+os.system(f"python3 ./steps/set_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform}")
 
 
-# #run test and deleting it
-os.system("python3 ./steps/run_k8s_test_with_proxy.py  -p_zone {} -h_zone {} -h_platform {} -t_zone {}".format(proxy_zone, host_zone, host_platform, target_zone))
+#run test and deleting it
+os.system(f"python3 ./steps/run_k8s_test_with_proxy_several_test.py  -p_zone {proxy_zone} -h_zone {host_zone}\
+           -h_platform {host_platform} -t_zone {target_zone} -t_platform {target_platform} -folder_res {args.folder_res}")
 
 #clean target and source clusters
-os.system("python3 ./steps/delete_k8s_cluster.py --del_all {}".format(True))
+#os.system(f"python3 ./steps/delete_k8s_cluster.py --del_all {True}")
 test_end_time(start_time)

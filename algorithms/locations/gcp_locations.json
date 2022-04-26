@@ -1,0 +1,20 @@
+{
+    "Sydney"            : { "name" : "australia-southeast1"   ,  "lat" : -33.8688 , "long" : 151.2093  },
+    "Tokyo"             : { "name" : "asia-northeast1"        ,  "lat" : 35.6762  , "long" : 139.6503  },
+    "Taiwan"            : { "name" : "asia-east1"             ,  "lat" : 23.6978  , "long" : 120.9605   },
+    "Hong Kong"         : { "name" : "asia-east2"             ,  "lat" : 22.3193  , "long" : 114.1694  },
+    "Singapore"         : { "name" : "asia-southeast1"        ,  "lat" : 1.3521   , "long" : 103.8198  },
+    "Mumbai"            : { "name" : "asia-south1"            ,  "lat" : 19.0760  , "long" : 72.8777   },
+    "Finland"           : { "name" : "europe-north1"          ,  "lat" : 47.3769  , "long" : 8.5417   },
+    "London"            : { "name" : "europe-west2"           ,  "lat" : 51.5074  , "long" : -0.1278   },
+    "Frankfurt"         : { "name" : "europe-west3"           ,  "lat" : 50.1109  , "long" :  8.6821   },
+    "Belgium"           : { "name" : "europe-west1"           ,  "lat" : 50.5039  , "long" : 4.4699   },
+    "amsterdam"         : { "name" : "europe-west4"           ,  "lat" : 52.3676  , "long" : 4.9041    },
+    "Montreal"          : { "name" : "northamerica-northeast1",  "lat" : 45.5017  , "long" : -73.5673  },
+    "South Carolina"    : { "name" : "us-east1"               ,  "lat" : 33.8361  , "long" : -81.1637  },
+    "Northern Virginia" : { "name" : "us-east4"               ,  "lat" : 38.8334  , "long" : -77.2365 },
+    "Iowa"              : { "name" : "us-central1"            ,  "lat" : 41.8780 , "long" : -93.0977  },
+    "Oregon"            : { "name" : "us-west1"               ,  "lat" : 43.8041  , "long" : -120.5542 },
+    "Los Angeles"       : { "name" : "us-west2"               ,  "lat" : 34.0522  , "long" : -118.2437 },
+    "Sao Paulo"         : { "name" : "southamerica-east1"     ,  "lat" : -23.5558 , "long" : -46.6396  }
+}

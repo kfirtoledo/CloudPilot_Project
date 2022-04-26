@@ -48,17 +48,19 @@ target_ip       = args.target_ip
 target_port     = args.target_port
 
 #creating proxy cluster
-os.system(f"python3 ./steps/create_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform}")
+os.system(f"python3 ./steps/create_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name}")
 os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type proxy -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name}")
     
-#set target ip
-data_dic ={"ip": target_ip, "port" : target_port ,"cluster_zone" :  target_zone, "cluster_type" :  "target",\
-            "cluster_name" :  target_name ,"cluster_platform" :  "manual" }
-cluster_key=target_name+"_"+target_zone
-update_metadata(METADATA_FILE,cluster_key ,data_dic)
+# #set target ip
+# data_dic ={"ip": target_ip, "port" : target_port ,"cluster_zone" :  target_zone, "cluster_type" :  "target",\
+#             "cluster_name" :  target_name ,"cluster_platform" :  "manual" }
+# cluster_key=target_name+"_"+target_zone
+# update_metadata(METADATA_FILE,cluster_key ,data_dic)
 
 #setting source, target, proxy clusters
-os.system(f"python3 ./steps/set_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform} -p_target {target_name}")
+os.system(f"python3 ./steps/set_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform} -name {proxy_name}\
+        -p_target_ip {target_ip} -p_target_port {target_port} -f_target_ip {target_ip} -f_target_port {target_port}\
+         -p_target {target_name} ")
 
 #clean target and source clusters
 #delete_cluster_meta_data(file=METADATA_FILE,name=target_name,zone=target_zone)

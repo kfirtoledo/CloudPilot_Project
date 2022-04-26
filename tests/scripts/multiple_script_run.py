@@ -22,8 +22,8 @@ def sleep_time(val):
 ############################### Main ##########################
 
 parser.add_argument("-s"    , "--script"     , default = "", help=" cript to run")
-SLEEP_TIME= 1
-NOF_LOOPS=2
+SLEEP_TIME= 3*60
+NOF_LOOPS=7
 args = parser.parse_args()
 for i in range(NOF_LOOPS):
     print("Start running script {} - iteration {} ".format(args.script,i))
@@ -31,3 +31,4 @@ for i in range(NOF_LOOPS):
     print("START: sleeping for {} minutes".format(SLEEP_TIME))
     sleep_time(SLEEP_TIME)
     print("FINISH: sleeping for {} minutes ".format(SLEEP_TIME))
+    

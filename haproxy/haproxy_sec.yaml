@@ -1,0 +1,37 @@
+#apiVersion: policy/v1beta1
+#kind: PodSecurityPolicy
+#metadata:
+#  name: sysctl-psp
+#spec:
+#  allowedUnsafeSysctls:
+#  - net.ipv4.tcp_congestion_control
+#  forbiddenSysctls:
+#  - net.ipv4.tcp_congestion_control
+#  spec:
+#    privileged: True  # Prevents creation of privileged Pods
+#  supplementalGroups:
+#    rule: RunAsAny
+#  runAsUser:
+#    rule: RunAsAny
+#  fsGroup:
+#    rule: RunAsAny
+#  volumes:
+#     - '*'
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: my-psp
+spec:
+  forbiddenSysctls:
+  - net.ipv4.tcp_congestion_control
+  privileged: false  # Prevents creation of privileged Pods
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  fsGroup:
+    rule: RunAsAny
+  volumes:
+  - '*'

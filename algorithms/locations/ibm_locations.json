@@ -1,0 +1,20 @@
+{
+    "Sydney"          : { "name" : "syd01",  "lat" : -33.8688 , "long" : 151.2093  },
+    "Melbourn"        : { "name" : "mel01",  "lat" : -37.8136 , "long" : 144.9631  },
+    "Tokyo"           : { "name" : "tok02",  "lat" : 35.6762  , "long" : 139.6503  },
+    "Hong Kong"       : { "name" : "hkg02",  "lat" : 22.3193  , "long" : 114.1694  },
+    "Singapore"       : { "name" : "sng01",  "lat" : 1.3521   , "long" : 103.8198  },
+    "Chennai"         : { "name" : "che01",  "lat" : 13.0827  , "long" : 80.2707   },
+    "Milan"           : { "name" : "mil01",  "lat" : 45.4642  , "long" : 9.1900    },
+    "paris"           : { "name" : "par01",  "lat" : 48.8566  , "long" :  2.3522   },
+    "Frankfurt"       : { "name" : "fra02",  "lat" : 50.1109  , "long" :  8.6821   },
+    "amsterdam"       : { "name" : "ams03",  "lat" : 52.3676  , "long" : 4.9041    },
+    "London"          : { "name" : "lon02",  "lat" : 51.5074  , "long" : -0.1278   },
+    "Montreal"        : { "name" : "mon01",  "lat" : 45.5017  , "long" : -73.5673  },
+    "Toronto"         : { "name" : "tor01",  "lat" : 43.6532  , "long" : -79.3832  },
+    "Washington D.C." : { "name" : "wdc04",  "lat" : 38.9072  , "long" : -77.0369  },
+    "Dallas"          : { "name" : "dal10",  "lat" : 32.7767  , "long" : -96.7970  },
+    "San Jose"        : { "name" : "sjc03",  "lat" : 37.3382  , "long" : -121.8863 },
+    "Mexico city"     : { "name" : "mex01",  "lat" : 19.4326  , "long" : -99.1332  },
+    "Sao Paulo"       : { "name" : "sao01",  "lat" : -23.5558 , "long" : -46.6396  }
+}

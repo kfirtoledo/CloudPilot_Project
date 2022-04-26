@@ -37,7 +37,8 @@ container_reg = get_plarform_container_reg(platform)
 
 #build docker image
 print("Start build forwarding-proxy image")
-os.system("docker build -t forwarding-proxy  forwarding-proxy/ --no-cache")
+#os.system("docker build -t forwarding-proxy  forwarding-proxy/ --no-cache")
+os.system("docker build -t forwarding-proxy  forwarding-proxy/ ")
 # tag docker image and push it to image container registry
 print("tagging forwarding-proxy  image")
 os.system("docker tag forwarding-proxy  {}/forwarding-proxy ".format(container_reg))
@@ -76,9 +77,15 @@ print("Setting Fowarding configuration")
 os.system("kubectl exec -i {} -- sysctl -w net.ipv4.ip_default_ttl=129".format(POD_NAME))
 os.system("kubectl exec -i {} -- sysctl -w net.ipv4.conf.all.proxy_arp=1".format(POD_NAME))
 os.system("kubectl exec -i {} -- sysctl -w net.ipv4.ip_forward=1".format(POD_NAME))
+os.system("kubectl exec -i {} -- sysctl -w net.ipv4.tcp_congestion_control=bbr".format(POD_NAME))
+
 #Setting iptables
 print("Setting iptables rules")
 cmd=f"kubectl exec -i {POD_NAME} -- iptables -t nat -A PREROUTING -p tcp -d {POD_INTERNAL_IP} -j DNAT --to-destination {target_ip}:{target_port}"
 os.system(cmd)
 os.system(f"kubectl exec -i {POD_NAME} -- iptables -t nat -A POSTROUTING -p tcp --dport {target_port} -j SNAT --to-source {POD_INTERNAL_IP}")
+print("See TCP Read buffer configuration configuration")
+os.system("kubectl exec -i {} -- cat /proc/sys/net/ipv4/tcp_rmem".format(POD_NAME))
+print("See TCP write buffer configuration configuration")
+os.system("kubectl exec -i {} -- cat /proc/sys/net/ipv4/tcp_wmem".format(POD_NAME))
 

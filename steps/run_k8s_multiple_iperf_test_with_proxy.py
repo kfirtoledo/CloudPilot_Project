@@ -1,5 +1,5 @@
 ################################################################
-#Name: run_k8s_baseline_test
+#Name: run_multiple_iperf3 test
 #Desc: Creating iperf3 test from host to target with proxy in the middle . 
 #      this test:
 #      -Check the direct throughput and latency between host to target.

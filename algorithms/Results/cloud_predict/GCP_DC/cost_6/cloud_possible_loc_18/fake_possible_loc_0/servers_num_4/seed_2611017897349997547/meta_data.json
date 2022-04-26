@@ -1,0 +1,52 @@
+{
+  "algs_name_a": [
+    "two_proxy_greedy_rb_alg"
+  ],
+  "bw": {
+    "host_bw": 1024,
+    "pxy_bw": 2054
+  },
+  "create_plot": false,
+  "dist_type": "latency_gcp_dc",
+  "dist_type_val": "ms",
+  "links": 12,
+  "max_cost": {
+    "bw_cost": 0.08,
+    "max_cost": 6,
+    "pxy_cost": 0.5
+  },
+  "max_fast_optimal": 5,
+  "max_link2pxy_dist": 22.4609375,
+  "max_link_dist": 276.03660906707455,
+  "mean_link2pxy_dist": 22.4609375,
+  "mean_link_dist": 140.51830453353728,
+  "median_link2pxy_dist": 22.4609375,
+  "median_link_dist": 141.51830453353728,
+  "min_link2pxy_dist": 22.4609375,
+  "min_link_dist": 45.0,
+  "no_proxy_score": 1201.1749051186825,
+  "nof_fake_pxy": 0,
+  "nof_servers": 4,
+  "nof_srvr_grp": 0,
+  "opt_pxy_num": 13,
+  "opt_score": 192.0,
+  "opt_total_cost": 10.34,
+  "opt_type_link": {
+    "1_pxy": 0,
+    "2_pxy": 12,
+    "direct": 0
+  },
+  "seed": 2611017897349997547,
+  "start_cost": 6,
+  "start_loc": [
+    35.6762,
+    139.6503
+  ],
+  "start_loc_name": "tokyo",
+  "theoretical_opt_score": 600.5874525593413,
+  "type_cost": "static",
+  "type_data_size": "fix",
+  "type_env": "saved",
+  "type_prob": "localized_cdns",
+  "use_fake_pxy": false
+}

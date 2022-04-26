@@ -44,22 +44,31 @@ def deploy_host(cluster_platform):
         os.system("./steps/iperf3_setup.sh")
         host_ip= sp.getoutput('kubectl get svc iperf3-loadbalancer-service --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"')
     host_port = "5500"
+    print("Set Forwarding to allow BBR ")
+    os.system(f"kubectl create -f forwarding-proxy/forwarding-proxy.yaml")
     return  {"ip": host_ip, "port" : host_port}
 
-def deploy_proxy(cluster_platform,proxy_target_name):
-    target_ip ,target_port = get_ip_and_port(METADATA_FILE,proxy_target_name ,type_data="target")
+def deploy_proxy(cluster_platform,proxy_target_name,proxy_target_ip,proxy_target_port, f_target_ip, f_target_port):
+    if proxy_target_ip =="" and f_target_ip == "":
+        target_ip ,target_port = get_ip_and_port(METADATA_FILE,proxy_target_name ,type_data="target")
+        proxy_target_ip   = target_ip
+        f_target_ip       = target_ip
+        proxy_target_port = target_port
+        f_target_port     = target_port
    #creating haproxy Deploymnet and service
-    print("\ntarget_ip {} \n".format(target_ip))
-    os.system(f"python3 ./steps/haproxy_setup.py -target_ip {target_ip} -platform {cluster_platform} -target_port {target_port}")
+    print("\n Proxy target_ip {} \n".format(proxy_target_ip))
+    os.system(f"python3 ./steps/haproxy_setup.py -target_ip {proxy_target_ip} -platform {cluster_platform} -target_port {proxy_target_port}")
 
     #get haproxy sercive ext_ip
     proxy_ip= sp.getoutput('kubectl get svc haproxy-service --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"')
     proxy_port=5100
 
-    #creating forwarding Deploymnet and service
-    os.system(f"python3 ./steps/forwarding_setup.py -target_ip {target_ip} -platform {cluster_platform} -target_port {target_port}")
+    # creating forwarding Deploymnet and service
+    print("\n Forwarding target_ip {} \n".format(f_target_ip))
+    os.system(f"python3 ./steps/forwarding_setup.py -target_ip {f_target_ip} -platform {cluster_platform} -target_port {f_target_port}")
     forwarding_ip=sp.getoutput('kubectl get svc forwarding-service --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"')
-    forwarding_port=5200
+    # forwarding_ip = "0.0.0.0/0"
+    # forwarding_port=5200
     return {"forwarding_ip": forwarding_ip, "forwarding_port" : forwarding_port, "proxy_ip": proxy_ip, "proxy_port" : proxy_port}
 
 
@@ -69,7 +78,12 @@ parser.add_argument("-zone"        , "--cluster_zone"    , default  = "us-east1-
 parser.add_argument("-type"        , "--cluster_type"    , default  = "host"       , help="setting k8s cluster typw")
 parser.add_argument("-name"        , "--cluster_name"    , default  = ""          , help="setting k8s cluster name")
 parser.add_argument("-platform"    , "--cluster_platform", default = "gcp"         , help="setting k8s cloud platform")
-parser.add_argument("-p_target"    , "--proxy_target_name"   , default  = "target-k8s" , help="setting k8s cluster name")
+parser.add_argument("-p_target"    , "--proxy_target_name" , default  = "target-k8s" , help="getting proxy target name")
+parser.add_argument("-f_target_ip" , "--forward_target_ip"   , default  = "" , help="getting forwarding target ip")
+parser.add_argument("-f_target_port","--forward_target_port" , default  = "" , help="getting forwarding target port")
+parser.add_argument("-p_target_ip" , "--proxy_target_ip"   , default  = "" , help="getting proxy target ip")
+parser.add_argument("-p_target_port","--proxy_target_port" , default  = "" , help="getting proxy target port")
+
 
 args = parser.parse_args()
 cluster_zone   = args.cluster_zone
@@ -89,7 +103,8 @@ if (cluster_type == "host") :
 elif (cluster_type == "target"):
     data_dic  = deploy_target(cluster_platform)
 else: # cluster_type == "proxy-k8s" 
-    data_dic  = deploy_proxy(cluster_platform,args.proxy_target_name)
+    data_dic  = deploy_proxy(cluster_platform,args.proxy_target_name,\
+                             args.proxy_target_ip, args.proxy_target_port, args.forward_target_ip, args.forward_target_port)
 
 #update meta_data file
 data_dic.update({"cluster_zone" :  cluster_zone })

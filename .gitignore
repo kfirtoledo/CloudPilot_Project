@@ -1,9 +1,10 @@
 .idea
 *.iml
 *.pyc
+results/*
 old/*
 check.sh
-Graphs/output
+Graphs/
 
 haproxy/haproxy.cfg
 project_metadata/metadata.json

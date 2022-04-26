@@ -75,5 +75,10 @@ while external_ip =="":
 
 print("haproxy LoadBalancer is ready, external_id: {}".format(external_ip))
 
+POD_NAME        = sp.getoutput("kubectl get pods -l app=my-haproxy -o name | head -n 1| cut -d'/' -f2")
+os.system(f"kubectl exec -i {POD_NAME} -- cat /proc/sys/net/ipv4/tcp_congestion_control")
+
+
+
 #set iperf3 client for ping only
 os.system("kubectl create -f iperf3/iperf3_client.yaml")

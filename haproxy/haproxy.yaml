@@ -19,13 +19,32 @@ spec:
       labels:
         app: my-haproxy
     spec:
+#      initContainers:
+#        - name: init-sysctl
+#          image: busybox
+#          command:
+#            - sysctl
+#            - -w
+#            - net.ipv4.tcp_congestion_control=bbr
+#          securityContext:
+#            privileged: true
       containers:
       - name: my-haproxy
-        #image: gcr.io/kubernetes-321918/my-haproxy:custom 
-        image: gcr.io/kubernetes-321918/my-haproxy:custom 
+        #image: gcr.io/cedar-turbine-341711/my-haproxy:custom 
+        image: gcr.io/cedar-turbine-341711/my-haproxy:custom 
         imagePullPolicy: Always
         ports:
         - containerPort: 5021
         - containerPort: 5500
-        name: bind-tcp
-
+        securityContext:
+          allowPrivilegeEscalation: true
+          readOnlyRootFilesystem: false
+        resources:
+          requests:
+            memory: "256Mi"
+          limits:
+            memory: "512Mi"
+        #      securityContext:
+#        sysctls:
+#        - name: net.ipv4.tcp_congestion_control
+#          value: "bbr"

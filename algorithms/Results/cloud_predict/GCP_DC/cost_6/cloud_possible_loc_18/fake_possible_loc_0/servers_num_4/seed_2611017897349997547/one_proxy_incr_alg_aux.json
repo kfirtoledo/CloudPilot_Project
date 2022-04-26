@@ -1,0 +1,242 @@
+{
+  "1": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C8E8CA0>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.9164336820684984, 'fct_improve_per_cost': 9.636572038795054, 'link_score': 102.60416534586737}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8AF0>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.9094910026588885, 'fct_improve_per_cost': 9.60166155329328, 'link_score': 102.60416534586737}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8BB0>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.2910447761194026, 'fct_improve_per_cost': 6.398205473177167, 'link_score': 95.45460869565218}, '<aux_func.path_object.link_o object at 0x0000027E3C8E89D0>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.2888888888888885, 'fct_improve_per_cost': 6.397333638824049, 'link_score': 96.16695652173914}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8C10>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8A60>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8A90>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E87C0>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E87F0>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8B20>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8BE0>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8C70>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 1.14,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ]
+    ],
+    "score": 958.2642964230303,
+    "type_link": {
+      "1_pxy": 4,
+      "2_pxy": 0,
+      "direct": 8
+    }
+  },
+  "2": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C94C370>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.9164336820684984, 'fct_improve_per_cost': 9.636572038795054, 'link_score': 102.60416534586737}, '<aux_func.path_object.link_o object at 0x0000027E3C94C220>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.9094910026588885, 'fct_improve_per_cost': 9.60166155329328, 'link_score': 102.60416534586737}, '<aux_func.path_object.link_o object at 0x0000027E31BA9E80>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [47.3769, 8.5417]], 'fct_improve': 4.168114807785767, 'fct_improve_per_cost': 6.516763164109823, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C94C160>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [43.8041, -120.5542]], 'fct_improve': 4.168114807785767, 'fct_improve_per_cost': 6.516763164109823, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C94C2B0>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.2910447761194026, 'fct_improve_per_cost': 6.398205473177167, 'link_score': 95.45460869565218}, '<aux_func.path_object.link_o object at 0x0000027E3C94C250>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '1_pxy', 'pxy': [43.8041, -120.5542], 'fct_improve': 1.2888888888888885, 'fct_improve_per_cost': 6.397333638824049, 'link_score': 96.16695652173914}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8A60>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E31BA9EB0>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C190>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C280>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C2E0>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C340>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 2.28,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ]
+    ],
+    "score": 800.123079031726,
+    "type_link": {
+      "1_pxy": 4,
+      "2_pxy": 2,
+      "direct": 6
+    }
+  },
+  "3": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C946280>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [35.6762, 139.6503]], 'fct_improve': 5.729929355564052, 'fct_improve_per_cost': 10.356205215374734, 'link_score': 34.19269565217392}, '<aux_func.path_object.link_o object at 0x0000027E3C946460>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[35.6762, 139.6503], [47.3769, 8.5417]], 'fct_improve': 5.633400185042338, 'fct_improve_per_cost': 10.270111954192735, 'link_score': 34.90504347826087}, '<aux_func.path_object.link_o object at 0x0000027E3C946430>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': '1_pxy', 'pxy': [35.6762, 139.6503], 'fct_improve': 1.5222222222222226, 'fct_improve_per_cost': 6.850400218123748, 'link_score': 64.11130434782608}, '<aux_func.path_object.link_o object at 0x0000027E3C946340>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '1_pxy', 'pxy': [35.6762, 139.6503], 'fct_improve': 1.3384615384615381, 'fct_improve_per_cost': 6.5912008144115415, 'link_score': 92.60521739130435}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8C10>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [47.3769, 8.5417]], 'fct_improve': 4.168114807785767, 'fct_improve_per_cost': 6.516763164109823, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C9463A0>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [35.6762, 139.6503]], 'fct_improve': 3.6041666666666656, 'fct_improve_per_cost': 6.514127367760328, 'link_score': 34.19269565217392}, '<aux_func.path_object.link_o object at 0x0000027E31BA9E80>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E31BA9EB0>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8A60>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946250>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946310>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C9463D0>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 3.1,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ],
+      [
+        35.6762,
+        139.6503
+      ]
+    ],
+    "score": 644.779096166078,
+    "type_link": {
+      "1_pxy": 2,
+      "2_pxy": 4,
+      "direct": 6
+    }
+  },
+  "4": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C8E8430>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [47.3769, 8.5417]], 'fct_improve': 7.878519537624955, 'fct_improve_per_cost': 12.317905882680945, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1AF0>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [23.6978, 120.9605]], 'fct_improve': 7.849977962780038, 'fct_improve_per_cost': 12.273281707922706, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8340>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [43.8041, -120.5542]], 'fct_improve': 4.046511627906975, 'fct_improve_per_cost': 6.971806588138351, 'link_score': 30.630956521739137}, '<aux_func.path_object.link_o object at 0x0000027E3C8E86D0>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': '1_pxy', 'pxy': [35.6762, 139.6503], 'fct_improve': 1.5222222222222226, 'fct_improve_per_cost': 6.850400218123748, 'link_score': 64.11130434782608}, '<aux_func.path_object.link_o object at 0x0000027E3C8D13D0>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [47.3769, 8.5417]], 'fct_improve': 4.168114807785767, 'fct_improve_per_cost': 6.516763164109823, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1AC0>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [35.6762, 139.6503]], 'fct_improve': 3.6041666666666656, 'fct_improve_per_cost': 6.514127367760328, 'link_score': 34.19269565217392}, '<aux_func.path_object.link_o object at 0x0000027E31BA9E80>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1C40>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1DF0>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1D00>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1F40>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8490>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 3.76,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ],
+      [
+        35.6762,
+        139.6503
+      ],
+      [
+        23.6978,
+        120.9605
+      ]
+    ],
+    "score": 563.6236007708565,
+    "type_link": {
+      "1_pxy": 1,
+      "2_pxy": 5,
+      "direct": 6
+    }
+  },
+  "5": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C946C10>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [47.3769, 8.5417]], 'fct_improve': 7.878519537624955, 'fct_improve_per_cost': 12.317905882680945, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C9460A0>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [23.6978, 120.9605]], 'fct_improve': 7.849977962780038, 'fct_improve_per_cost': 12.273281707922706, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E31BA9E80>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '1_pxy', 'pxy': [38.8334, -77.2365], 'fct_improve': 1.6778756736091567, 'fct_improve_per_cost': 7.479586951427164, 'link_score': 62.00033925891085}, '<aux_func.path_object.link_o object at 0x0000027E31BA9EB0>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': '1_pxy', 'pxy': [38.8334, -77.2365], 'fct_improve': 1.658816833299544, 'fct_improve_per_cost': 7.418791786601681, 'link_score': 62.71268708499781}, '<aux_func.path_object.link_o object at 0x0000027E3C9461F0>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [43.8041, -120.5542]], 'fct_improve': 4.046511627906975, 'fct_improve_per_cost': 6.971806588138351, 'link_score': 30.630956521739137}, '<aux_func.path_object.link_o object at 0x0000027E3C946BE0>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': '1_pxy', 'pxy': [35.6762, 139.6503], 'fct_improve': 1.5222222222222226, 'fct_improve_per_cost': 6.850400218123748, 'link_score': 64.11130434782608}, '<aux_func.path_object.link_o object at 0x0000027E3C946040>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [35.6762, 139.6503]], 'fct_improve': 3.6041666666666656, 'fct_improve_per_cost': 6.514127367760328, 'link_score': 34.19269565217392}, '<aux_func.path_object.link_o object at 0x0000027E3C946070>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': '1_pxy', 'pxy': [38.8334, -77.2365], 'fct_improve': 1.2872354549191345, 'fct_improve_per_cost': 5.738201979719688, 'link_score': 62.00033925891085}, '<aux_func.path_object.link_o object at 0x0000027E3C9465B0>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': '1_pxy', 'pxy': [38.8334, -77.2365], 'fct_improve': 1.2726138620549838, 'fct_improve_per_cost': 5.691561043873302, 'link_score': 62.71268708499781}, '<aux_func.path_object.link_o object at 0x0000027E3C9461C0>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': '2_pxy', 'pxy': [[38.8334, -77.2365], [43.8041, -120.5542]], 'fct_improve': 1.5517241379310338, 'fct_improve_per_cost': 2.197516376168775, 'link_score': 20.658086956521746}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1F40>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1C40>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 4.9,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ],
+      [
+        35.6762,
+        139.6503
+      ],
+      [
+        23.6978,
+        120.9605
+      ],
+      [
+        38.8334,
+        -77.2365
+      ]
+    ],
+    "score": 513.0469051186825,
+    "type_link": {
+      "1_pxy": 5,
+      "2_pxy": 5,
+      "direct": 2
+    }
+  },
+  "6": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C94C940>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [47.3769, 8.5417]], 'fct_improve': 7.878519537624955, 'fct_improve_per_cost': 12.317905882680945, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C94C520>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [23.6978, 120.9605]], 'fct_improve': 7.849977962780038, 'fct_improve_per_cost': 12.273281707922706, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C94C670>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[38.8334, -77.2365], [23.6978, 120.9605]], 'fct_improve': 5.965517241379307, 'fct_improve_per_cost': 8.448229623937733, 'link_score': 20.658086956521746}, '<aux_func.path_object.link_o object at 0x0000027E3C94C880>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [38.8334, -77.2365]], 'fct_improve': 5.799999999999996, 'fct_improve_per_cost': 8.366324581444994, 'link_score': 21.370434782608704}, '<aux_func.path_object.link_o object at 0x0000027E3C94C2B0>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '1_pxy', 'pxy': [38.8334, -77.2365], 'fct_improve': 1.6778756736091567, 'fct_improve_per_cost': 7.479586951427164, 'link_score': 62.00033925891085}, '<aux_func.path_object.link_o object at 0x0000027E3C94C580>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': '1_pxy', 'pxy': [35.6762, 139.6503], 'fct_improve': 1.5222222222222226, 'fct_improve_per_cost': 6.850400218123748, 'link_score': 64.11130434782608}, '<aux_func.path_object.link_o object at 0x0000027E3C94C3A0>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [43.8041, -120.5542]], 'fct_improve': 4.168114807785767, 'fct_improve_per_cost': 6.516763164109823, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1F40>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8D1C40>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C5B0>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C550>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C94C610>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 4.92,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ],
+      [
+        35.6762,
+        139.6503
+      ],
+      [
+        23.6978,
+        120.9605
+      ],
+      [
+        38.8334,
+        -77.2365
+      ],
+      [
+        23.6978,
+        120.9605
+      ]
+    ],
+    "score": 498.7999485969433,
+    "type_link": {
+      "1_pxy": 2,
+      "2_pxy": 5,
+      "direct": 5
+    }
+  },
+  "7": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C8E8B80>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [51.5074, -0.1278]], 'fct_improve': 12.289629899334102, 'fct_improve_per_cost': 15.014096291654125, 'link_score': 16.0}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8130>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[51.5074, -0.1278], [23.6978, 120.9605]], 'fct_improve': 12.245108160203667, 'fct_improve_per_cost': 14.959704606643946, 'link_score': 16.0}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8DC0>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[38.8334, -77.2365], [23.6978, 120.9605]], 'fct_improve': 5.965517241379307, 'fct_improve_per_cost': 8.448229623937733, 'link_score': 20.658086956521746}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8E20>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [38.8334, -77.2365]], 'fct_improve': 5.799999999999996, 'fct_improve_per_cost': 8.366324581444994, 'link_score': 21.370434782608704}, '<aux_func.path_object.link_o object at 0x0000027E3C9461C0>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '1_pxy', 'pxy': [38.8334, -77.2365], 'fct_improve': 1.6778756736091567, 'fct_improve_per_cost': 7.479586951427164, 'link_score': 62.00033925891085}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8A90>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': '1_pxy', 'pxy': [35.6762, 139.6503], 'fct_improve': 1.5222222222222226, 'fct_improve_per_cost': 6.850400218123748, 'link_score': 64.11130434782608}, '<aux_func.path_object.link_o object at 0x0000027E3C946610>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': '2_pxy', 'pxy': [[47.3769, 8.5417], [43.8041, -120.5542]], 'fct_improve': 4.168114807785767, 'fct_improve_per_cost': 6.516763164109823, 'link_score': 24.958252302389113}, '<aux_func.path_object.link_o object at 0x0000027E3C8E84C0>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [47.3769, 8.5417]], 'fct_improve': 2.6055025364435944, 'fct_improve_per_cost': 4.489066489692596, 'link_score': 30.630956521739137}, '<aux_func.path_object.link_o object at 0x0000027E3C946730>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C9469A0>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E8100>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C8E81C0>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 5.74,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ],
+      [
+        35.6762,
+        139.6503
+      ],
+      [
+        23.6978,
+        120.9605
+      ],
+      [
+        38.8334,
+        -77.2365
+      ],
+      [
+        23.6978,
+        120.9605
+      ],
+      [
+        51.5074,
+        -0.1278
+      ]
+    ],
+    "score": 431.7053656028195,
+    "type_link": {
+      "1_pxy": 2,
+      "2_pxy": 6,
+      "direct": 4
+    }
+  },
+  "8": {
+    "allocation": "{'<aux_func.path_object.link_o object at 0x0000027E3C946FA0>': {'link': '((37.228034353594246, 120.9605), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [51.5074, -0.1278]], 'fct_improve': 12.289629899334102, 'fct_improve_per_cost': 15.014096291654125, 'link_score': 16.0}, '<aux_func.path_object.link_o object at 0x0000027E3C946670>': {'link': '((56.36450332140701, 8.5417), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[51.5074, -0.1278], [23.6978, 120.9605]], 'fct_improve': 12.245108160203667, 'fct_improve_per_cost': 14.959704606643946, 'link_score': 16.0}, '<aux_func.path_object.link_o object at 0x0000027E3C946EB0>': {'link': '((46.37785213126502, -93.0977), (37.228034353594246, 120.9605))', 'type_link': '2_pxy', 'pxy': [[38.8334, -77.2365], [23.6978, 120.9605]], 'fct_improve': 5.965517241379307, 'fct_improve_per_cost': 8.448229623937733, 'link_score': 20.658086956521746}, '<aux_func.path_object.link_o object at 0x0000027E3C9468B0>': {'link': '((37.228034353594246, 120.9605), (46.37785213126502, -93.0977))', 'type_link': '2_pxy', 'pxy': [[23.6978, 120.9605], [38.8334, -77.2365]], 'fct_improve': 5.799999999999996, 'fct_improve_per_cost': 8.366324581444994, 'link_score': 21.370434782608704}, '<aux_func.path_object.link_o object at 0x0000027E3C9467F0>': {'link': '((45.60385891976274, -120.5542), (56.36450332140701, 8.5417))', 'type_link': '2_pxy', 'pxy': [[43.8041, -120.5542], [51.5074, -0.1278]], 'fct_improve': 6.50180381237758, 'fct_improve_per_cost': 7.943177240330908, 'link_score': 16.0}, '<aux_func.path_object.link_o object at 0x0000027E3C946160>': {'link': '((56.36450332140701, 8.5417), (45.60385891976274, -120.5542))', 'type_link': '2_pxy', 'pxy': [[51.5074, -0.1278], [43.8041, -120.5542]], 'fct_improve': 6.50180381237758, 'fct_improve_per_cost': 7.943177240330908, 'link_score': 16.0}, '<aux_func.path_object.link_o object at 0x0000027E3C9462E0>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946700>': {'link': '((45.60385891976274, -120.5542), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946E20>': {'link': '((56.36450332140701, 8.5417), (46.37785213126502, -93.0977))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946EE0>': {'link': '((46.37785213126502, -93.0977), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946B80>': {'link': '((46.37785213126502, -93.0977), (56.36450332140701, 8.5417))', 'type_link': 'direct', 'pxy': None}, '<aux_func.path_object.link_o object at 0x0000027E3C946D60>': {'link': '((37.228034353594246, 120.9605), (45.60385891976274, -120.5542))', 'type_link': 'direct', 'pxy': None}}",
+    "cost": 5.92,
+    "pxy_set": [
+      [
+        43.8041,
+        -120.5542
+      ],
+      [
+        47.3769,
+        8.5417
+      ],
+      [
+        35.6762,
+        139.6503
+      ],
+      [
+        23.6978,
+        120.9605
+      ],
+      [
+        38.8334,
+        -77.2365
+      ],
+      [
+        23.6978,
+        120.9605
+      ],
+      [
+        51.5074,
+        -0.1278
+      ],
+      [
+        51.5074,
+        -0.1278
+      ]
+    ],
+    "score": 459.4052002569522,
+    "type_link": {
+      "1_pxy": 0,
+      "2_pxy": 6,
+      "direct": 6
+    }
+  }
+}

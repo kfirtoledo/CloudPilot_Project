@@ -50,38 +50,43 @@ start_time=test_start_time()
 print("start Test between {} to {}".format(args.host_zone,args.target_zone))
 print(args.proxy_zone)
 #creating sorce and target
-os.system(f"python3 ./steps/create_k8s_cluster.py -type host -zone {host_zone} -platform {host_platform} -name {host_name}")# -bg {True}")
+os.system(f"python3 ./steps/create_k8s_cluster.py -type host -zone {host_zone} -platform {host_platform} -name {host_name} -bg {True}")
 for i,proxy_zone in enumerate(args.proxy_zone):
-    if i in  [0,1]:
-        print(proxy_zone)
-        proxy_name = args.proxy_name[i]
-        os.system(f"python3 ./steps/create_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform} -name {proxy_name} -bg {True}")
+    print(proxy_zone)
+    proxy_name=args.proxy_name[i]
+    os.system(f"python3 ./steps/create_k8s_cluster.py -type proxy  -zone {proxy_zone} -platform {proxy_platform} -name {proxy_name} -bg {True}")
 os.system(f"python3 ./steps/create_k8s_cluster.py -type target -zone {target_zone} -platform {target_platform} -name {target_name}")
-#
 
-# #setting source, target
-os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type target -zone {target_zone} -platform {target_platform} -name {target_name}")
-os.system(f"python3 ./steps/set_k8s_cluster.py -type target -zone {target_zone} -platform {target_platform} -name {target_name}")
-#
+#check clusters ready
 os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type host   -zone {host_zone} -platform {host_platform} -name {host_name}")
+for i,proxy_zone in enumerate(args.proxy_zone):
+    print(proxy_zone)
+    proxy_name=args.proxy_name[i]
+    os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type proxy -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name}")
+os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type target -zone {target_zone} -platform {target_platform} -name {target_name}")
+
+#setting source, target
+os.system(f"python3 ./steps/set_k8s_cluster.py -type target -zone {target_zone} -platform {target_platform} -name {target_name}")
+
 os.system(f"python3 ./steps/set_k8s_cluster.py -type host   -zone {host_zone} -platform {host_platform} -name {host_name}")
+
+
 
 #setting haproxy , proxy clusters
 for i,proxy_zone in enumerate(args.proxy_zone):
-    if i in [0,1]:
-        print(proxy_zone)
-        proxy_name=args.proxy_name[i]
-        # os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type proxy -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name}")
-        # os.system(f"python3 ./steps/set_k8s_cluster.py -type proxy -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name} -p_target {target_name}")
-        # os.system(f"python3 ./steps/run_k8s_test_with_proxy_several_test.py  -h_zone {host_zone} -h_platform {host_platform}\
-        # -h_name {host_name}  -p_zone {proxy_zone} -p_platform {proxy_platform} -p_name {proxy_name} -t_zone {target_zone}\
-         #-t_platform {target_platform} -t_name {target_name} ")
+    run_direct= "True" if i ==0  else "False"
+    #run_direct = "False"
+    print(proxy_zone)
+    proxy_name=args.proxy_name[i]
+    os.system(f"python3 ./steps/check_k8s_cluster_ready.py -type proxy -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name}")
+    os.system(f"python3 ./steps/set_k8s_cluster.py -type proxy -zone {proxy_zone} -platform {proxy_platform}  -name {proxy_name} -p_target {target_name}")
+    os.system(f"python3 ./steps/run_k8s_test_with_proxy_several_test.py  -h_zone {host_zone} -h_platform {host_platform}\
+       -h_name {host_name}  -p_zone {proxy_zone} -p_platform {proxy_platform} -p_name {proxy_name} -t_zone {target_zone}\
+       -t_platform {target_platform} -t_name {target_name} -run_direct {run_direct}")
 
-        # os.system(f"python3 ./steps/delete_k8s_cluster.py -name {proxy_name}  -zone {proxy_zone} -platform {proxy_platform} -bg {True}")
+    os.system(f"python3 ./steps/delete_k8s_cluster.py -name {proxy_name}  -zone {proxy_zone} -platform {proxy_platform} -bg {True}")
 
 # #clean target and source clusters
-#os.system(f"python3 ./steps/delete_k8s_cluster.py --del_all {True}")
-# os.system(f"python3 ./steps/delete_k8s_cluster.py -name {target_name}  -zone {target_zone} -platform {target_platform} -bg {True}")
-#os.system(f"python3 ./steps/delete_k8s_cluster.py -name {host_name}  -zone {host_zone} -platform {host_platform} -bg {True}")
+os.system(f"python3 ./steps/delete_k8s_cluster.py --del_all {True}")
 
 test_end_time(start_time)

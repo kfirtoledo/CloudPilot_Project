@@ -32,6 +32,15 @@ spec:
         - key: node-role.kubernetes.io/master
           operator: Exists
           effect: NoSchedule
+#      initContainers:
+#        - name: init-sysctl
+#          image: busybox
+#          command:
+#            - sysctl
+#            - -w
+#            - net.ipv4.tcp_congestion_control=bbr
+#          securityContext:
+#            privileged: true
       containers:
       - name: iperf3-server
         #image: networkstatic/iperf3

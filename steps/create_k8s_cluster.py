@@ -9,7 +9,7 @@ import subprocess as sp
 import sys
 sys.path.insert(1, 'project_metadata/')
 from meta_data_func import *
-from PROJECT_PARAMS import METADATA_FILE
+from PROJECT_PARAMS import METADATA_FILE,PROJECT_PATH
 try:
     from typing import runtime_checkable
 except ImportError:
@@ -18,13 +18,30 @@ import argparse
 parser = argparse.ArgumentParser()
 
 ############################### functions ##########################
-def create_k8s_cluster(cluster_name, cluster_zone, cluster_platform,run_in_bg):
+def create_k8s_cluster(cluster_name, cluster_zone, cluster_platform,run_in_bg,cluster_type):
     print("create {} cluster , zone {} , platform {}".format(cluster_name, cluster_zone, cluster_platform))
     bg_flag= "&" if run_in_bg else ""
+    #large_buffer= f" --system-config-from-file={PROJECT_PATH}/haproxy/gcp_cluster_config.cfg" if cluster_type =="proxy" else ""
+    if "proxy-k8s1" in cluster_name :
+        large_buffer=f" --system-config-from-file={PROJECT_PATH}/steps/aux_func/gcp_cluster_config_proxy1.cfg"
+        #large_buffer = f" --system-config-from-file={PROJECT_PATH}/steps/aux_func/gcp_cluster_config.cfg"
+    elif "proxy-k8s2" in cluster_name:
+        large_buffer = f" --system-config-from-file={PROJECT_PATH}/steps/aux_func/gcp_cluster_config_proxy2.cfg"
+        #large_buffer = f" --system-config-from-file={PROJECT_PATH}/steps/aux_func/gcp_cluster_config.cfg"
+    elif cluster_name == "proxy-k8s":
+        large_buffer = f" --system-config-from-file={PROJECT_PATH}/steps/aux_func/gcp_cluster_config.cfg"
+        large_buffer = ""
+    else:
+        large_buffer =""
     if cluster_platform == "gcp":
-        os.system("gcloud container clusters create {} --zone {} --num-nodes 1  {}".format(cluster_name, cluster_zone,bg_flag))
+        cmd=f"gcloud container clusters create {cluster_name} --zone {cluster_zone} --num-nodes 1 {large_buffer} {bg_flag}"
+        print(cmd)
+        os.system(cmd)
     elif cluster_platform == "aws": #--instance-selector-vcpus 2  --instance-selector-memory 4 --instance-selector-cpu-architecture arm64
-        os.system("eksctl create cluster --name {} --region {} -N 1  {}".format(cluster_name, cluster_zone, bg_flag))
+        cmd =f"eksctl create cluster --name {cluster_name} --region {cluster_zone} -N 1  {bg_flag}"
+        print(cmd)
+        os.system(cmd)
+
     elif cluster_platform == "ibm":
         vlan_private_ip=sp.getoutput("ibmcloud ks vlans --zone {} |fgrep private |cut -d ' ' -f 1".format(cluster_zone))
         vlan_public_ip=sp.getoutput("ibmcloud ks vlans --zone {}  |fgrep public |cut -d ' ' -f 1".format(cluster_zone))
@@ -63,7 +80,7 @@ if (args.cluster_name == ""):
 else:
     cluster_name  = args.cluster_name
 
-create_k8s_cluster(cluster_name,cluster_zone, cluster_platform,run_in_bg)
+create_k8s_cluster(cluster_name,cluster_zone, cluster_platform,run_in_bg,cluster_type=cluster_type)
 
 #update meta_data file
 data_dic.update({"cluster_zone" :  cluster_zone })

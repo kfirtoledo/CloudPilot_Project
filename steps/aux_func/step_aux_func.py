@@ -35,7 +35,7 @@ def replace_source_image(file,image,platform):
     f = open(file, "r")
     lines = f.readlines()
     for idx,line in enumerate(lines):
-        if "image:" in line:
+        if ("image:" in line) and (image in line):
           container_reg= get_plarform_container_reg(platform)
           line_s=line.split(':')[0]
           lines[idx] =line_s+": {}/{} \n".format(container_reg,image)

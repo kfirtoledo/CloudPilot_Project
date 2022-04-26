@@ -1,9 +1,0 @@
-PING 34.87.128.161 (34.87.128.161) 56(84) bytes of data.
-64 bytes from 34.87.128.161: icmp_seq=1 ttl=109 time=60.2 ms
-64 bytes from 34.87.128.161: icmp_seq=2 ttl=109 time=60.4 ms
-64 bytes from 34.87.128.161: icmp_seq=3 ttl=109 time=60.3 ms
-64 bytes from 34.87.128.161: icmp_seq=4 ttl=109 time=60.2 ms
-
---- 34.87.128.161 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 7ms
-rtt min/avg/max/mdev = 60.237/60.282/60.384/0.252 ms
