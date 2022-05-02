@@ -3,9 +3,9 @@ This git contain the components for CloudPilot Project.
 1) Cloud proxy acceleration:
     This component can create one proxy or two-proxy acceleration for destination IP.  
     In addition, the system can create network measurement for checking throughput and latency between different regions in different cloud platforms.  
-    The test creates K8S clusters(Host,target) in different regions and performs iPerf3 tests.
+    The test creates K8S clusters(Host,target) in different regions and performs iPerf3 tests.  
     The iPerf3 test has four types of flavors:
-    - **Direct** - Direct test between host to target.
+    - **Direct connection ** - Direct connection test between host to target.
     - **TCP Forwarding**- Test between host to target via proxy server.
                    The proxy server forward the TCP traffic using iptables rules.
                    
@@ -19,10 +19,10 @@ This git contain the components for CloudPilot Project.
                 
     ![alt text](./ReadMe/two_proxy_acceleration.png)
 2) Cloud proxy allocation Algorithms:
-This component contains simulation and algorithms for choosing the best proxies location.
+This component contains simulation and algorithms for choosing the best proxies location.  
 There are five different algorithms: Flow greedy FCT, Flow greedy cost, one proxy greedy, two proxy greedy
-and two proxy greedy with RollBack.
-With this algorithm, you can find the best location for placing proxies acceleration that can be done 
+and two proxy greedy with RollBack.  
+With those algorithms, you can find the best location for placing proxies acceleration that can be done 
 with the first component.  
 
 ## Supported cloud platforms 
@@ -40,7 +40,6 @@ The project folders are:
 - **iPerf3**           - Contain YAMLs files to create iPerf3 server deployment,iPerf3 client and LoadBalancer.  
 - **project_metadata** - contain metadata.json -(save all metadata for each test (Clusters, Regions, Platforms, IPs etc.))
                          and api functions to update the metadata.  
-- **ReadMe**           - Contain files for project README.
 - **ReadMe**           - Contain files for project README.
 - **Steps**            - Contain scripts for each step of the test: 
     - Cluster create 
@@ -111,7 +110,7 @@ There are four types of operation can be done with cloud proxy acceleration:
 - Additional tests examples that use  ```test/scripts/Examples``` can be found in ```test``` folder. 
 
 ## How to run prediction algorithm
-This simulation calculates the proxies' locations for given servers' couples locations.
+This simulation calculates the proxies' locations for given servers' couples locations.  
 To run the prediction algorithm simulation please update the file ```algorithms/tests/cloud_proxy_prediction/cloud_proxy_prediction.py ```
 with the following parameters:
 - Algorithm name
@@ -122,10 +121,10 @@ with the following parameters:
 To run the algorithm prediction simulation please run the file  ```algorithms/tests/cloud_proxy_prediction/cliud_proxy_prediction.py ```  
 More details can be found in the file.
 ## How to run algorithms simulation
-This component contain simulation for the five algorithms for proxy placement routing:
+This component contain simulation for the five algorithms for proxy placement routing:  
 Flow greedy FCT, Flow greedy cost, one proxy greedy, two proxy greedy
 and two proxy greedy with RollBack.  
-There are four use cases for simulation: one-to-many,many-to-many,many one-to-one an many one-to-many.
+There are four use cases for simulation: one-to-many,many-to-many,many one-to-one an many one-to-many.  
 To run the algorithm simulation is recommended to use python IDE like PyCharm.  
 1) One-to-many - to run simulation for use case one-to-many please run 
   the file ```algorithms/tests/Example_one_to_many_simulation_test.py ```  
