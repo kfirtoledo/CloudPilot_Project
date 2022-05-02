@@ -1,17 +1,23 @@
 # CloudPilot Project
 This git contain the components for CloudPilot Project.
 1) Cloud proxy acceleration:
-    This Component can create one proxy or two-proxy acceleration for destination IP.  
-    In addition, the system can create network measurement for checking throughput and latency between different regions in different clouds platforms.
+    This component can create one proxy or two-proxy acceleration for destination IP.  
+    In addition, the system can create network measurement for checking throughput and latency between different regions in different cloud platforms.  
     The test creates K8S clusters(Host,target) in different regions and performs iPerf3 tests.
-    the iPerf3 test has 3 types of flavors:
+    The iPerf3 test has four types of flavors:
     - **Direct** - Direct test between host to target.
-    - **TCP Splitting**-  Test between host to target via one proxy or two proxies server .  
-                The proxy server split the tcp connection using HAProxy.
     - **TCP Forwarding**- Test between host to target via proxy server.
-                   The proxy server forward the tcp traffic using iptables rules.
-
-    ![alt text](./ReadMe/System_Diagram.png)
+                   The proxy server forward the TCP traffic using iptables rules.
+                   
+    - **one proxy acceleration**- Test between host to target via one TCP splitting proxy.  
+                The proxy server split the TCP connection using HAProxy.
+    
+    ![alt text](./ReadMe/one_proxy_acceleration.png)
+    
+    - **Two proxy acceleration**- Test between host to target via two TCP splitting proxies.  
+                The proxies split the TCP connection using HAProxy.
+                
+    ![alt text](./ReadMe/two_proxy_acceleration.png)
 2) Cloud proxy allocation Algorithms:
 This component contains simulation and algorithms for choosing the best proxies location.
 There are five different algorithms: Flow greedy FCT, Flow greedy cost, one proxy greedy, two proxy greedy
@@ -29,11 +35,11 @@ Currently the following platforms are supported:
 | Proxy Cluster| V | V | TODO | TODO|
 ### Folders Description
 The project folders are:
-- **forwarding proxy** - Contain docker and YAMLs files to create forwarding proxy image, K8S deployment and LoadBalancer.  
+- **Forwarding proxy** - Contain docker and YAMLs files to create forwarding proxy image, K8S deployment and LoadBalancer.  
 - **HAProxy**          - Contain docker and YAMLs files to create custom HAProxy image, K8S deployment and LoadBalancer.  
 - **iPerf3**           - Contain YAMLs files to create iPerf3 server deployment,iPerf3 client and LoadBalancer.  
-- **project_metadata** - contain metadata.json -(save all meta data for each test (Clusters, Regions, Platforms, IPs etc.))
-                         and api functions to update the meta_data.  
+- **project_metadata** - contain metadata.json -(save all metadata for each test (Clusters, Regions, Platforms, IPs etc.))
+                         and api functions to update the metadata.  
 - **ReadMe**           - Contain files for project README.
 - **ReadMe**           - Contain files for project README.
 - **Steps**            - Contain scripts for each step of the test: 
@@ -49,7 +55,7 @@ The project folders are:
 ## Environment setup
 Before running a test, do the following preparations:
 
-- Check you are login to all th relevant cloud platforms:
+- Check you are login to all the relevant cloud platforms:
     - IBM: ``` ibmcloud login  --apikey @ <apikey.json> ```
     - GCP: ```  gcloud auth login ;```  ``` gcloud auth configure-docker ```
     - AWS: ```  aws configure ```
@@ -97,15 +103,16 @@ There are four types of operation can be done with cloud proxy acceleration:
     ```python3 tests/scripts/one_proxy_acceleration.py```
 
 4) Creating two proxy-acceleration :
-   This component create two K8S cluster proxies acceleration for given destination IP. 
+   This component create two K8S cluster proxies for acceleration for a given  destination IP. 
     Before running the component please update the regions and cloud provider of the proxies
     in the file ```test/scripts/two_proxy_acceleration.py ```.
     To run the test run the command:  
     ```python3 tests/scripts/two_proxy_acceleration.py```
 - Additional tests examples that use  ```test/scripts/Examples``` can be found in ```test``` folder. 
 
-## How to run algorithms prediction
-To run the algorithm prediction simulation please update the file ```algorithms/tests/cloud_proxy_prediction/cliud_proxy_prediction.py ```
+## How to run prediction algorithm
+This simulation calculates the proxies' locations for given servers' couples locations.
+To run the prediction algorithm simulation please update the file ```algorithms/tests/cloud_proxy_prediction/cloud_proxy_prediction.py ```
 with the following parameters:
 - Algorithm name
 - Budget
